@@ -8,9 +8,14 @@ through a **BPF ring buffer** into userspace, wraps it in a **C++ data class**
 
 We are following that [paper](./doc/xdp-the-express-data-path.pdf) from the [tutorial](https://github.com/xdp-project/xdp-tutorial) using _vibe coding_.
 
+## Prepare, Build & run
 
-## Build & run
+As preparation we need the following packages to be installed:
+```sh
+ap-get install cmake clang llvm libelf-dev libbpf1 libbpf-dev pkg-config gcc-multilib 
+```
 
+Afterwards one can build the project by:
 ```sh
 cmake -S . -B build && cmake --build build
 sudo ./build/xdp_demo enp5s0                      # demo: prints each packet
